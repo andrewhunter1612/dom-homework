@@ -29,17 +29,29 @@ const addNewForm = function(element){
     strengthInput.setAttribute('id', 'strength')
 
     const likedGroup = document.createElement('group')
+    const bothLiked = document.createElement('group')
+    const bothUnliked = document.createElement('group')
+
+    const likedLabel = document.createElement('label')
+    likedLabel.textContent = "Like: "
 
     const likedInput = document.createElement('input')
     likedInput.setAttribute('type', 'radio')
     likedInput.setAttribute('id', 'liked')
+    likedInput.setAttribute('name', 'liked')
     likedInput.value = "Liked"
+
+
+    const unLikedLabel = document.createElement('label')
+    unLikedLabel.textContent = "Don't like: "
 
     const unlikedInput = document.createElement('input')
     unlikedInput.setAttribute('type', 'radio')
     unlikedInput.setAttribute('id', 'liked')
+    unlikedInput.setAttribute('name', 'liked')
     unlikedInput.value = "Didn't like"
 
+    
     const notesInput = document.createElement('input')
     notesInput.placeholder = "Enter extra notes"
     notesInput.setAttribute('id', 'notes')
@@ -54,8 +66,12 @@ const addNewForm = function(element){
     deleteAllButton.addEventListener('click', deleteAllItems)
     deleteAllButton.textContent = 'Delete All Items'
 
-    likedGroup.appendChild(likedInput)
-    likedGroup.appendChild(unlikedInput)
+    bothLiked.appendChild(likedLabel)
+    bothLiked.appendChild(likedInput)
+    bothUnliked.appendChild(unLikedLabel)
+    bothUnliked.appendChild(unlikedInput)
+    likedGroup.appendChild(bothLiked)
+    likedGroup.appendChild(bothUnliked)
     form.appendChild(nameInput)
     form.appendChild(breweryInput)
     form.appendChild(dateInput)
