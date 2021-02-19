@@ -8,8 +8,8 @@ const addNewForm = function(element){
     const listSection = document.createElement('section')
 
     formSection.classList.add('form-section')
-
     const form = document.createElement('form')
+    form.classList.add('input-form')
 
     const nameInput = document.createElement('input')
     nameInput.placeholder = "Enter beer name"
@@ -48,6 +48,12 @@ const addNewForm = function(element){
     submitButton.textContent = 'Submit'
     form.addEventListener('submit', submitForm)
 
+    const deleteSection = document.createElement('section')
+
+    const deleteAllButton = document.createElement('button')
+    deleteAllButton.addEventListener('click', deleteAllItems)
+    deleteAllButton.textContent = 'Delete All Items'
+
     likedGroup.appendChild(likedInput)
     likedGroup.appendChild(unlikedInput)
     form.appendChild(nameInput)
@@ -57,15 +63,18 @@ const addNewForm = function(element){
     form.appendChild(likedGroup)
     form.appendChild(notesInput)
     form.appendChild(submitButton)
+    deleteSection.appendChild(deleteAllButton)
     
     formSection.appendChild(form)
     element.appendChild(formSection)
+    element.appendChild(deleteSection)
     element.appendChild(listSection)
 }
 
 const submitForm = function (event){
     const body = document.querySelector('body')
     event.preventDefault()
+    console.log("submit form");
     
     const listItem = document.createElement('li')
 
@@ -98,4 +107,12 @@ const submitForm = function (event){
     
     body.appendChild(listItem)
 
+    document.querySelector(".input-form").reset()
+}
+
+const deleteAllItems = function(){
+    const elements = document.querySelectorAll('li')
+    for (const element of elements){
+        element.remove()
+    }
 }
