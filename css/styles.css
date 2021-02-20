@@ -8,16 +8,27 @@ body {
 }
 
 .input-form{
-    
+    margin: 1em;
 }
 
 .list-section{
     text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 .list-item{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
     list-style-type: none;
+    background-color: yellow;
+    width: 200px;
 }
 
-.list-item > p{
+button {
+    background-color: peachpuff;
+    border-radius: 10px;
+    margin: 10px;
 }
