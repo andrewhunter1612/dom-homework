@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const addNewForm = function(element){
     const formSection = document.createElement('section')
+    formSection.classList.add('form-section')
     const listSection = document.createElement('section')
+    listSection.classList.add('list-section')
 
     formSection.classList.add('form-section')
     const form = document.createElement('form')
@@ -88,11 +90,11 @@ const addNewForm = function(element){
 }
 
 const submitForm = function (event){
-    const body = document.querySelector('body')
+    const body = document.querySelector('.list-section')
     event.preventDefault()
-    console.log("submit form");
     
     const listItem = document.createElement('li')
+    listItem.classList.add("list-item")
 
     const nameField = document.createElement('p')
     nameField.textContent = `Name: ${this.name.value}`

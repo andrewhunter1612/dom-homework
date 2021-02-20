@@ -1,0 +1,23 @@
+body {
+    
+}
+
+.form-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+.input-form{
+    
+}
+
+.list-section{
+    text-decoration: none;
+}
+
+.list-item{
+    list-style-type: none;
+}
+
+.list-item > p{
+}
