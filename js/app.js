@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.querySelector('body')
     // addNewForm(body)
 
-    body.appendChild(newForm(thingsToBeAddedToForm))
+    body.appendChild(newForm("input", "new-class", "Enter beer type"))
 })
 
-const thingsToBeAddedToForm = ("input")
+const thingsToBeAddedToForm = ("input", "new-class")
 
 
 const newForm = function(newElementType, className="", placeholder="", attributeType="", attributeName=""){
@@ -19,7 +19,7 @@ const newForm = function(newElementType, className="", placeholder="", attribute
         newElement.setAttribute(attributeType, attributeName)
     }
 
-    // newElement.classList.add(className)
+    newElement.classList.add(className)
 
     return newElement
 }
